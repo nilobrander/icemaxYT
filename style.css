@@ -3251,6 +3251,416 @@ img {
     -webkit-text-fill-color: transparent;
     color: transparent;
 
+   /* =====================================================
+   ICEMAX COUNTDOWN
+===================================================== */
+
+.countdown-section {
+    position: relative;
+    padding: 120px 0;
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0, 220, 255, 0.08),
+            transparent 45%
+        ),
+        var(--bg);
+}
+
+
+/* GRID BACKGROUND */
+
+.countdown-background {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 20%,
+            black 80%,
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* WRAPPER */
+
+.countdown-wrapper {
+    position: relative;
+    z-index: 2;
+
+    padding: 70px 50px;
+
+    border: 1px solid rgba(0, 220, 255, 0.18);
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.4),
+        0 0 80px rgba(0, 220, 255, 0.05);
+
+    backdrop-filter: blur(20px);
+}
+
+
+/* HEADER */
+
+.countdown-header {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+
+.countdown-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 22px;
+
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+
+    color: var(--cyan);
+}
+
+
+.countdown-label i {
+    font-size: 13px;
+}
+
+
+.countdown-header h2 {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(
+        38px,
+        6vw,
+        75px
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.05em;
+
+    color: var(--text);
+}
+
+
+.countdown-header h2 span {
+    color: var(--cyan);
+
+    text-shadow:
+        0 0 35px rgba(0, 220, 255, 0.25);
+}
+
+
+.countdown-header p {
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* COUNTDOWN GRID */
+
+.countdown-grid {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* BOX */
+
+.countdown-box {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 180px;
+    height: 170px;
+
+    border: 1px solid var(--line);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.countdown-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 20%;
+
+    width: 60%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+}
+
+
+.countdown-box:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(0, 220, 255, 0.4);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(0, 220, 255, 0.08);
+}
+
+
+/* NUMBER */
+
+.countdown-number {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: clamp(
+        40px,
+        5vw,
+        65px
+    );
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: var(--text);
+
+    text-shadow:
+        0 0 25px rgba(0, 220, 255, 0.12);
+}
+
+
+/* UNIT */
+
+.countdown-unit {
+    margin-top: 15px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+
+    color: var(--muted);
+}
+
+
+/* : SEPARATOR */
+
+.countdown-separator {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 45px;
+    font-weight: 700;
+
+    color: var(--cyan);
+
+    opacity: 0.65;
+
+    transform: translateY(-10px);
+
+    animation:
+        countdownPulse 1s ease-in-out infinite;
+}
+
+
+@keyframes countdownPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* STATUS */
+
+.countdown-status {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 40px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    color: var(--muted);
+}
+
+
+.countdown-status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 12px var(--green);
+
+    animation:
+        countdownStatusPulse 1.5s ease-in-out infinite;
+}
+
+
+@keyframes countdownStatusPulse {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* =====================================================
+   COUNTDOWN RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .countdown-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .countdown-separator {
+        display: none;
+    }
+
+
+    .countdown-box {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .countdown-section {
+        padding: 80px 0;
+    }
+
+
+    .countdown-wrapper {
+        padding:
+            45px 20px;
+    }
+
+
+    .countdown-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .countdown-box {
+        height: 130px;
+    }
+
+
+    .countdown-number {
+        font-size: 38px;
+    }
+
+
+    .countdown-unit {
+        font-size: 8px;
+    }
+
+}
     /* Sicherheit */
     max-width: 100%;
 }
