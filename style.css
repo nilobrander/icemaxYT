@@ -3664,3 +3664,379 @@ img {
     /* Sicherheit */
     max-width: 100%;
 }
+
+/* =====================================================
+   LATEST YOUTUBE VIDEO PANEL
+===================================================== */
+
+.youtube-panel {
+    position: relative;
+
+    width: 100%;
+
+    padding: 28px;
+
+    border: 1px solid var(--line);
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(139, 92, 246, 0.12),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(0, 220, 255, 0.09),
+            transparent 40%
+        ),
+        rgba(7, 10, 16, 0.92);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        0 0 50px rgba(0, 220, 255, 0.03);
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.youtube-panel-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 22px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+.youtube-panel-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    color: var(--muted);
+}
+
+
+.youtube-panel-status {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    color: var(--cyan);
+}
+
+
+/* =====================================================
+   YOUTUBE DOT
+===================================================== */
+
+.youtube-live-dot {
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ff0033;
+
+    box-shadow:
+        0 0 10px rgba(255, 0, 51, 0.9);
+
+    animation:
+        youtubeDotPulse 1.5s ease-in-out infinite;
+}
+
+
+@keyframes youtubeDotPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+
+        transform:
+            scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.2);
+    }
+
+}
+
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.youtube-video-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
+
+    background: #000;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+
+.youtube-video-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 0;
+
+    left: 15%;
+
+    width: 70%;
+
+    height: 1px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            transparent
+        );
+}
+
+
+.youtube-video-wrapper iframe {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.youtube-panel-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 30px;
+
+    padding-top: 30px;
+}
+
+
+.youtube-eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+
+    color: var(--cyan);
+}
+
+
+.youtube-panel-content h3 {
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            22px,
+            2.5vw,
+            35px
+        );
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+
+    color: var(--text);
+}
+
+
+.youtube-panel-content h3 span {
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--cyan);
+}
+
+
+.youtube-panel-content p {
+    max-width: 500px;
+
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   YOUTUBE BUTTON
+===================================================== */
+
+.youtube-watch-button {
+    flex-shrink: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding:
+        15px 18px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+
+    color: var(--text);
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.youtube-watch-button .fa-youtube {
+    font-size: 17px;
+
+    color: #ff0033;
+}
+
+
+.youtube-watch-button:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(0, 220, 255, 0.4);
+
+    background:
+        rgba(0, 220, 255, 0.07);
+
+    box-shadow:
+        0 10px 30px rgba(0, 220, 255, 0.08);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .youtube-panel {
+        padding: 18px;
+
+        border-radius: 22px;
+    }
+
+
+    .youtube-panel-top {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .youtube-panel-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .youtube-watch-button {
+        width: 100%;
+    }
+
+}
