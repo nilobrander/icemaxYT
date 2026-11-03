@@ -720,3 +720,216 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+/* =====================================================
+   ICEMAX COUNTDOWN
+===================================================== */
+
+const countdownDays =
+    document.getElementById("countdownDays");
+
+const countdownHours =
+    document.getElementById("countdownHours");
+
+const countdownMinutes =
+    document.getElementById("countdownMinutes");
+
+const countdownSeconds =
+    document.getElementById("countdownSeconds");
+
+const countdownStatus =
+    document.getElementById("countdownStatus");
+
+
+/*
+    Ziel:
+    Samstag, 07. November 2026
+    20:00 Uhr Schweiz
+
+    November = Monat 10,
+    weil JavaScript bei 0 beginnt:
+    Januar = 0
+    November = 10
+*/
+
+const countdownTarget =
+    new Date(
+        2026,
+        10,
+        7,
+        20,
+        0,
+        0
+    );
+
+
+function updateCountdown() {
+
+    if (
+        !countdownDays ||
+        !countdownHours ||
+        !countdownMinutes ||
+        !countdownSeconds
+    ) {
+        return;
+    }
+
+
+    const now =
+        new Date();
+
+
+    const distance =
+        countdownTarget.getTime()
+        -
+        now.getTime();
+
+
+    /*
+        COUNTDOWN BEENDET
+    */
+
+    if (distance <= 0) {
+
+        countdownDays.textContent =
+            "00";
+
+        countdownHours.textContent =
+            "00";
+
+        countdownMinutes.textContent =
+            "00";
+
+        countdownSeconds.textContent =
+            "00";
+
+
+        if (countdownStatus) {
+
+            countdownStatus.textContent =
+                "THE WAIT IS OVER";
+
+        }
+
+
+        return;
+    }
+
+
+    /*
+        ZEIT BERECHNEN
+    */
+
+    const days =
+        Math.floor(
+            distance /
+            (
+                1000 *
+                60 *
+                60 *
+                24
+            )
+        );
+
+
+    const hours =
+        Math.floor(
+            (
+                distance %
+                (
+                    1000 *
+                    60 *
+                    60 *
+                    24
+                )
+            )
+            /
+            (
+                1000 *
+                60 *
+                60
+            )
+        );
+
+
+    const minutes =
+        Math.floor(
+            (
+                distance %
+                (
+                    1000 *
+                    60 *
+                    60
+                )
+            )
+            /
+            (
+                1000 *
+                60
+            )
+        );
+
+
+    const seconds =
+        Math.floor(
+            (
+                distance %
+                (
+                    1000 *
+                    60
+                )
+            )
+            /
+            1000
+        );
+
+
+    /*
+        AUSGABE
+    */
+
+    countdownDays.textContent =
+        String(days).padStart(
+            2,
+            "0"
+        );
+
+
+    countdownHours.textContent =
+        String(hours).padStart(
+            2,
+            "0"
+        );
+
+
+    countdownMinutes.textContent =
+        String(minutes).padStart(
+            2,
+            "0"
+        );
+
+
+    countdownSeconds.textContent =
+        String(seconds).padStart(
+            2,
+            "0"
+        );
+
+}
+
+
+/*
+    SOFORT STARTEN
+*/
+
+updateCountdown();
+
+
+/*
+    JEDE SEKUNDE AKTUALISIEREN
+*/
+
+setInterval(
+    updateCountdown,
+    1000
+);
