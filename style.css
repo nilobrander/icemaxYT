@@ -4039,4 +4039,1247 @@ img {
         width: 100%;
     }
 
+   /* =========================================================
+   ICEMAX WEBSITE
+   GLOBAL RESPONSIVE FIX
+   Desktop / Laptop / Tablet / Mobile
+========================================================= */
+
+
+/* =========================================================
+   1. GLOBALER SCHUTZ GEGEN VERZIEHEN
+========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+main,
+header,
+footer,
+section,
+nav {
+    max-width: 100%;
+}
+
+img,
+video,
+iframe,
+svg {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+
+/* =========================================================
+   2. HAUPT-CONTAINER
+========================================================= */
+
+.container {
+    width: min(1240px, calc(100% - 48px));
+    max-width: 1240px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   3. NAVIGATION
+========================================================= */
+
+.navbar {
+    width: 100%;
+    max-width: 100%;
+}
+
+.navbar-inner {
+    width: min(1440px, calc(100% - 48px));
+    max-width: 1440px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.nav-links {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   4. HERO
+========================================================= */
+
+.hero {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.hero-layout {
+    position: relative;
+
+    width: min(1240px, calc(100% - 48px));
+    max-width: 1240px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(360px, 0.85fr);
+
+    align-items: center;
+
+    gap: clamp(40px, 5vw, 80px);
+}
+
+
+/*
+   Extrem wichtig bei CSS Grid.
+
+   Ohne min-width: 0 können Texte, Videos und andere
+   Elemente eine Grid-Spalte breiter machen als vorgesehen.
+*/
+
+.hero-layout > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   5. HERO TEXT
+========================================================= */
+
+.hero h1 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(58px, 7vw, 110px);
+
+    overflow-wrap: normal;
+}
+
+.hero-copy {
+    width: 100%;
+    max-width: 650px;
+}
+
+.hero-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   6. YOUTUBE PANEL
+========================================================= */
+
+.youtube-panel {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    align-self: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   7. YOUTUBE HEADER
+========================================================= */
+
+.youtube-panel-top {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-width: 0;
+}
+
+.youtube-panel-label {
+    min-width: 0;
+}
+
+.youtube-panel-status {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   8. YOUTUBE VIDEO
+========================================================= */
+
+.youtube-video-wrapper {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    /*
+       Video bleibt IMMER 16:9.
+    */
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #000;
+}
+
+.youtube-video-wrapper iframe {
+    position: absolute;
+
+    inset: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   9. YOUTUBE CONTENT
+========================================================= */
+
+.youtube-panel-content {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+    align-items: end;
+
+    gap: 25px;
+}
+
+.youtube-panel-content > * {
+    min-width: 0;
+}
+
+.youtube-panel-content h3 {
+    max-width: 100%;
+
+    overflow-wrap: break-word;
+}
+
+.youtube-panel-content p {
+    width: 100%;
+    max-width: 520px;
+}
+
+.youtube-watch-button {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   10. MARQUEE
+========================================================= */
+
+.marquee {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.marquee-track {
+    width: max-content;
+}
+
+
+/* =========================================================
+   11. SECTIONS
+========================================================= */
+
+.section {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.section > .container {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   12. SECTION HEAD
+========================================================= */
+
+.section-head {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(250px, 0.7fr);
+
+    align-items: end;
+
+    gap: clamp(30px, 5vw, 70px);
+}
+
+.section-head > * {
+    min-width: 0;
+}
+
+.section-head h2 {
+    width: 100%;
+    max-width: 800px;
+}
+
+.section-head > p {
+    width: 100%;
+    max-width: 420px;
+}
+
+
+/* =========================================================
+   13. DISCOVER CARDS
+========================================================= */
+
+.card-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   14. SOCIAL CARDS
+========================================================= */
+
+.social-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.social-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   15. PROJECT CARDS
+========================================================= */
+
+.portfolio-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.portfolio-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   16. CONTACT
+========================================================= */
+
+.contact-layout {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.75fr)
+        minmax(0, 1.25fr);
+
+    gap: clamp(35px, 5vw, 60px);
+}
+
+.contact-layout > * {
+    min-width: 0;
+}
+
+.contact-form,
+.contact-info {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   17. FORMULAR
+========================================================= */
+
+.form-group {
+    width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   18. CTA / COMMUNITY
+========================================================= */
+
+.cta {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.cta .container {
+    min-width: 0;
+}
+
+.cta h2 {
+    width: 100%;
+    max-width: 900px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   19. FOOTER
+========================================================= */
+
+.footer {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.footer-top,
+.footer-bottom {
+    width: min(1240px, calc(100% - 48px));
+    max-width: 1240px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 40px;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   20. PAGE HERO
+   Über mich / Socials / Projekte / Datenschutz usw.
+========================================================= */
+
+.page-hero {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.page-hero .container {
+    min-width: 0;
+}
+
+.page-hero h1 {
+    max-width: 100%;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   21. LEGAL
+========================================================= */
+
+.legal-layout {
+    width: 100%;
+    max-width: 900px;
+}
+
+.legal-block {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   22. COUNTDOWN
+========================================================= */
+
+.countdown-section {
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.countdown-section .container {
+    min-width: 0;
+}
+
+.countdown {
+    width: 100%;
+    max-width: 100%;
+}
+
+.countdown-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.countdown-item {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   23. LAPTOP
+   <= 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    /*
+       Hero wird untereinander dargestellt.
+
+       Dadurch wird auf kleineren Laptops nichts
+       zusammengequetscht.
+    */
+
+    .hero-layout {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .hero-layout > * {
+        width: 100%;
+    }
+
+    .youtube-panel {
+        width: 100%;
+        max-width: 850px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section-head {
+        grid-template-columns: 1fr;
+
+        align-items: start;
+
+        gap: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   24. TABLET
+   <= 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .container,
+    .hero-layout,
+    .footer-top,
+    .footer-bottom {
+        width: calc(100% - 40px);
+    }
+
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .hero h1 {
+        font-size: clamp(55px, 11vw, 90px);
+    }
+
+
+    /* -----------------------------------------
+       CARDS
+    ----------------------------------------- */
+
+    .card-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* -----------------------------------------
+       SOCIALS
+    ----------------------------------------- */
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* -----------------------------------------
+       PROJECTS
+    ----------------------------------------- */
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* -----------------------------------------
+       CONTACT
+    ----------------------------------------- */
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+}
+
+
+/* =========================================================
+   25. HANDY
+   <= 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
+
+    .container,
+    .hero-layout,
+    .footer-top,
+    .footer-bottom {
+        width: calc(100% - 30px);
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    .navbar-inner {
+        width: calc(100% - 30px);
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 130px;
+        padding-bottom: 70px;
+    }
+
+    .hero-layout {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .hero h1 {
+        width: 100%;
+
+        font-size: clamp(
+            46px,
+            16vw,
+            75px
+        );
+
+        line-height: 0.88;
+
+        letter-spacing: -0.055em;
+    }
+
+    .hero-copy {
+        width: 100%;
+        max-width: 100%;
+
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       HERO BUTTONS
+    ===================================================== */
+
+    .hero-actions {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    /* =====================================================
+       YOUTUBE PANEL
+    ===================================================== */
+
+    .youtube-panel {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 16px;
+
+        border-radius: 20px;
+    }
+
+    .youtube-panel-top {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+    .youtube-panel-status {
+        white-space: normal;
+    }
+
+
+    /* =====================================================
+       YOUTUBE VIDEO
+    ===================================================== */
+
+    .youtube-video-wrapper {
+        width: 100%;
+
+        aspect-ratio: 16 / 9;
+
+        border-radius: 12px;
+    }
+
+
+    /* =====================================================
+       YOUTUBE CONTENT
+    ===================================================== */
+
+    .youtube-panel-content {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 22px;
+    }
+
+    .youtube-panel-content h3 {
+        width: 100%;
+
+        font-size: clamp(
+            24px,
+            8vw,
+            34px
+        );
+    }
+
+    .youtube-panel-content p {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .youtube-watch-button {
+        width: 100%;
+        max-width: 100%;
+
+        white-space: normal;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+
+    /* =====================================================
+       SECTIONS
+    ===================================================== */
+
+    .section {
+        padding:
+            80px
+            0;
+    }
+
+
+    /* =====================================================
+       SECTION HEAD
+    ===================================================== */
+
+    .section-head {
+        display: block;
+
+        width: 100%;
+    }
+
+    .section-head > p {
+        margin-top: 24px;
+    }
+
+    .section-head h2 {
+        width: 100%;
+
+        font-size: clamp(
+            38px,
+            12vw,
+            55px
+        );
+
+        line-height: 0.95;
+    }
+
+
+    /* =====================================================
+       CARDS
+    ===================================================== */
+
+    .card-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .card {
+        width: 100%;
+
+        min-height: 320px;
+    }
+
+
+    /* =====================================================
+       SOCIAL CARDS
+    ===================================================== */
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-card {
+        width: 100%;
+
+        min-height: 280px;
+    }
+
+
+    /* =====================================================
+       PROJECT CARDS
+    ===================================================== */
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-card {
+        width: 100%;
+
+        min-height: 330px;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    /* =====================================================
+       COUNTDOWN
+    ===================================================== */
+
+    .countdown-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    /* =====================================================
+       COMMUNITY CTA
+    ===================================================== */
+
+    .cta {
+        padding:
+            100px
+            0;
+    }
+
+    .cta h2 {
+        width: 100%;
+
+        font-size: clamp(
+            42px,
+            13vw,
+            65px
+        );
+
+        line-height: 0.95;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .footer-links {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    /* =====================================================
+       UNTERSEITEN
+    ===================================================== */
+
+    .page-hero {
+        padding:
+            140px
+            0
+            70px;
+    }
+
+    .page-hero h1 {
+        max-width: 100%;
+
+        font-size: clamp(
+            42px,
+            13vw,
+            62px
+        );
+
+        line-height: 0.92;
+    }
+
+}
+
+
+/* =========================================================
+   26. SEHR KLEINE HANDYS
+   <= 420px
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .container,
+    .hero-layout,
+    .footer-top,
+    .footer-bottom {
+        width: calc(100% - 20px);
+    }
+
+    .navbar-inner {
+        width: calc(100% - 20px);
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            42px,
+            15vw,
+            60px
+        );
+    }
+
+
+    /* =====================================================
+       YOUTUBE
+    ===================================================== */
+
+    .youtube-panel {
+        padding: 12px;
+
+        border-radius: 16px;
+    }
+
+    .youtube-video-wrapper {
+        border-radius: 10px;
+    }
+
+    .youtube-panel-content h3 {
+        font-size: 24px;
+    }
+
+    .youtube-watch-button {
+        font-size: 8px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    /* =====================================================
+       CARDS
+    ===================================================== */
+
+    .card {
+        padding: 22px;
+    }
+
+    .card-icon {
+        margin-top: 40px;
+    }
+
+
+    /* =====================================================
+       COUNTDOWN
+    ===================================================== */
+
+    .countdown-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    /* =====================================================
+       PAGE HERO
+    ===================================================== */
+
+    .page-hero h1 {
+        font-size: clamp(
+            36px,
+            12vw,
+            50px
+        );
+    }
+
+
+    /* =====================================================
+       LEGAL TEXT
+    ===================================================== */
+
+    .legal-block h2 {
+        overflow-wrap: break-word;
+
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   27. IMPRESSUM RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .page-hero h1.legal-title.impressum-gradient {
+        white-space: normal;
+
+        font-size: clamp(
+            40px,
+            13vw,
+            62px
+        );
+    }
+
+}
+
+
+/* =========================================================
+   28. DATENSCHUTZ RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .page-hero h1.legal-title.datenschutz-gradient {
+        /*
+           DATENSCHUTZ soll auf möglichst vielen
+           Handys weiterhin in eine Zeile passen.
+        */
+
+        white-space: nowrap;
+
+        font-size: clamp(
+            29px,
+            9vw,
+            48px
+        );
+
+        letter-spacing: -0.07em;
+    }
+
+}
+
+
+/* =========================================================
+   29. LANDSCAPE HANDY
+========================================================= */
+
+@media (
+    max-width: 900px
+)
+and
+(
+    orientation: landscape
+) {
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 120px;
+    }
+
+    .hero-layout {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   30. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .marquee-track {
+        animation: none;
+    }
+
+}
+
 }
