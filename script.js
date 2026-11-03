@@ -723,48 +723,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* =====================================================
    ICEMAX COUNTDOWN
+   Ziel: Samstag, 07. November 2026 – 20:00 Uhr Schweiz
 ===================================================== */
 
-const countdownDays =
-    document.getElementById("countdownDays");
-
-const countdownHours =
-    document.getElementById("countdownHours");
-
-const countdownMinutes =
-    document.getElementById("countdownMinutes");
-
-const countdownSeconds =
-    document.getElementById("countdownSeconds");
-
-const countdownStatus =
-    document.getElementById("countdownStatus");
-
+const countdownDays = document.getElementById("countdownDays");
+const countdownHours = document.getElementById("countdownHours");
+const countdownMinutes = document.getElementById("countdownMinutes");
+const countdownSeconds = document.getElementById("countdownSeconds");
+const countdownStatus = document.getElementById("countdownStatus");
 
 /*
-    Ziel:
-    Samstag, 07. November 2026
-    20:00 Uhr Schweiz
+    FESTES ZIELDATUM
 
-    November = Monat 10,
-    weil JavaScript bei 0 beginnt:
-    Januar = 0
-    November = 10
+    07. November 2026
+    20:00 Uhr Schweizer Zeit
+
+    +01:00 = Schweizer Winterzeit (CET)
 */
-
-const countdownTarget =
-    new Date(
-        2026,
-        10,
-        7,
-        20,
-        0,
-        0
-    );
+const countdownTarget = new Date("2026-11-07T20:00:00+01:00");
 
 
 function updateCountdown() {
 
+    // Prüfen, ob alle Countdown-Elemente vorhanden sind
     if (
         !countdownDays ||
         !countdownHours ||
@@ -774,162 +755,86 @@ function updateCountdown() {
         return;
     }
 
+    // Aktuelle Zeit
+    const now = new Date();
 
-    const now =
-        new Date();
-
-
+    // Verbleibende Zeit in Millisekunden
     const distance =
-        countdownTarget.getTime()
-        -
-        now.getTime();
+        countdownTarget.getTime() - now.getTime();
 
 
-    /*
-        COUNTDOWN BEENDET
-    */
+    /* =============================================
+       COUNTDOWN BEENDET
+    ============================================= */
 
     if (distance <= 0) {
 
-        countdownDays.textContent =
-            "00";
-
-        countdownHours.textContent =
-            "00";
-
-        countdownMinutes.textContent =
-            "00";
-
-        countdownSeconds.textContent =
-            "00";
-
+        countdownDays.textContent = "00";
+        countdownHours.textContent = "00";
+        countdownMinutes.textContent = "00";
+        countdownSeconds.textContent = "00";
 
         if (countdownStatus) {
-
-            countdownStatus.textContent =
-                "THE WAIT IS OVER";
-
+            countdownStatus.textContent = "THE WAIT IS OVER";
         }
-
 
         return;
     }
 
 
-    /*
-        ZEIT BERECHNEN
-    */
+    /* =============================================
+       VERBLEIBENDE ZEIT BERECHNEN
+    ============================================= */
 
-    const days =
-        Math.floor(
-            distance /
-            (
-                1000 *
-                60 *
-                60 *
-                24
-            )
-        );
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
 
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
 
-    const hours =
-        Math.floor(
-            (
-                distance %
-                (
-                    1000 *
-                    60 *
-                    60 *
-                    24
-                )
-            )
-            /
-            (
-                1000 *
-                60 *
-                60
-            )
-        );
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
+
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
 
 
-    const minutes =
-        Math.floor(
-            (
-                distance %
-                (
-                    1000 *
-                    60 *
-                    60
-                )
-            )
-            /
-            (
-                1000 *
-                60
-            )
-        );
-
-
-    const seconds =
-        Math.floor(
-            (
-                distance %
-                (
-                    1000 *
-                    60
-                )
-            )
-            /
-            1000
-        );
-
-
-    /*
-        AUSGABE
-    */
+    /* =============================================
+       COUNTDOWN ANZEIGEN
+    ============================================= */
 
     countdownDays.textContent =
-        String(days).padStart(
-            2,
-            "0"
-        );
-
+        String(days).padStart(2, "0");
 
     countdownHours.textContent =
-        String(hours).padStart(
-            2,
-            "0"
-        );
-
+        String(hours).padStart(2, "0");
 
     countdownMinutes.textContent =
-        String(minutes).padStart(
-            2,
-            "0"
-        );
-
+        String(minutes).padStart(2, "0");
 
     countdownSeconds.textContent =
-        String(seconds).padStart(
-            2,
-            "0"
-        );
+        String(seconds).padStart(2, "0");
 
+
+    /* =============================================
+       STATUS
+    ============================================= */
+
+    if (countdownStatus) {
+        countdownStatus.textContent = "COUNTDOWN ACTIVE";
+    }
 }
 
 
-/*
-    SOFORT STARTEN
-*/
-
+/* Countdown sofort berechnen */
 updateCountdown();
 
-
-/*
-    JEDE SEKUNDE AKTUALISIEREN
-*/
-
-setInterval(
-    updateCountdown,
-    1000
-);
+/* Danach jede Sekunde aktualisieren */
+setInterval(updateCountdown, 1000);
