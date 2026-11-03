@@ -2,83 +2,22 @@
 <html lang="de">
 
 <head>
-<script>
-    if (
-        window.location.pathname === "/icemaxYT/" ||
-        window.location.pathname === "/icemaxYT"
-    ) {
-        window.location.replace("/icemaxYT/index.html");
-    }
-</script>
-
-<!-- FAVICON -->
-<link
-    rel="icon"
-    href="favicon.svg"
-    type="image/svg+xml"
->
-
-<!-- GOOGLE FONTS -->
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
-
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
-
-<!-- FONT AWESOME -->
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
->
-
-<!-- ICEMAX CSS -->
-<link
-    rel="stylesheet"
-    href="style.css"
->
+    <script>
+        if (window.location.pathname === "/icemaxYT/" || window.location.pathname === "/icemaxYT") {
+            window.location.replace("/icemaxYT/index.html");
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="theme-color" content="#03050a">
-    <meta name="description"
-          content="ICEMAX – Gaming, Aviation, Streaming und Content Creation.">
-
+    <meta name="description" content="ICEMAX – Gaming, Aviation, Streaming und Content Creation.">
     <title>ICEMAX | Gaming • Aviation • Streaming</title>
-
-    <!-- Favicon -->
-    <link rel="icon"
-          href="images/favicon.svg"
-          type="image/svg+xml">
-
-    <!-- Haupt-CSS -->
-    <link rel="stylesheet"
-          href="css/style.css">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -319,7 +258,91 @@
 
                 </div>
 
-                <!-- =====================================================
+                
+
+               <!-- ==================================================
+     LATEST YOUTUBE VIDEO
+=================================================== -->
+
+<aside class="youtube-panel reveal">
+
+    <div class="youtube-panel-top">
+
+        <div class="youtube-panel-label">
+            <span class="youtube-live-dot"></span>
+
+            LATEST YOUTUBE VIDEO
+        </div>
+
+        <div class="youtube-panel-status">
+            ICEMAX // YOUTUBE
+        </div>
+
+    </div>
+
+
+    <!-- VIDEO -->
+
+    <div class="youtube-video-wrapper">
+
+        <iframe
+            src="https://www.youtube.com/embed/3zN__ZCTIV8?rel=0"
+            title="ICEMAX – Latest YouTube Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+
+    <!-- VIDEO INFO -->
+
+    <div class="youtube-panel-content">
+
+        <div>
+
+            <span class="youtube-eyebrow">
+                // NEWEST UPLOAD
+            </span>
+
+            <h3>
+                WATCH MY
+                <span>LATEST VIDEO.</span>
+            </h3>
+
+            <p>
+                Mein neuestes Video auf YouTube.
+                Schau jetzt rein und entdecke mehr
+                Content von ICEMAX.
+            </p>
+
+        </div>
+
+
+        <a
+            href="https://www.youtube.com/watch?v=3zN__ZCTIV8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="youtube-watch-button"
+        >
+
+            <i class="fa-brands fa-youtube"></i>
+
+            AUF YOUTUBE ANSEHEN
+
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+    </div>
+
+</aside>
+
+            </div>
+        </section>
+
+        <!-- =====================================================
      ICEMAX COUNTDOWN
 ====================================================== -->
 
@@ -428,85 +451,6 @@
     </div>
 
 </section>
-
-               <!-- ==================================================
-     LATEST YOUTUBE VIDEO
-=================================================== -->
-
-<aside class="youtube-panel reveal">
-
-    <div class="youtube-panel-top">
-
-        <div class="youtube-panel-label">
-            <span class="youtube-live-dot"></span>
-
-            LATEST YOUTUBE VIDEO
-        </div>
-
-        <div class="youtube-panel-status">
-            ICEMAX // YOUTUBE
-        </div>
-
-    </div>
-
-
-    <!-- VIDEO -->
-
-    <div class="youtube-video-wrapper">
-
-        <iframe
-            src="https://www.youtube.com/embed/3zN__ZCTIV8?rel=0"
-            title="ICEMAX – Latest YouTube Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-        </iframe>
-
-    </div>
-
-
-    <!-- VIDEO INFO -->
-
-    <div class="youtube-panel-content">
-
-        <div>
-
-            <span class="youtube-eyebrow">
-                // NEWEST UPLOAD
-            </span>
-
-            <h3>
-                WATCH MY
-                <span>LATEST VIDEO.</span>
-            </h3>
-
-            <p>
-                Mein neuestes Video auf YouTube.
-                Schau jetzt rein und entdecke mehr
-                Content von ICEMAX.
-            </p>
-
-        </div>
-
-
-        <a
-            href="https://www.youtube.com/watch?v=3zN__ZCTIV8"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="youtube-watch-button"
-        >
-
-            <i class="fa-brands fa-youtube"></i>
-
-            AUF YOUTUBE ANSEHEN
-
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-    </div>
-
-</aside>
 
 
         <!-- ==================================================
